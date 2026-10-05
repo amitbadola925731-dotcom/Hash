@@ -1,0 +1,295 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible Tours & Travels - Discover Extraordinary India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: {
+                            50: '#fffbf0',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309'
+                        },
+                        royal: {
+                            800: '#0f172a',
+                            900: '#030712'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(3,7,18,0.2) 0%, rgba(3,7,18,0.85) 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-saffron-500 selection:text-white">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <nav class="glass-panel rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-saffron-500 to-amber-600 flex items-center justify-center text-white shadow-md shadow-saffron-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-compass text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">INCREDIBLE</span>
+                        <span class="text-[10px] tracking-widest text-saffron-600 font-bold uppercase">Tours & Travels</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-700">
+                    <a href="#home" class="hover:text-saffron-600 transition-colors">Home</a>
+                    <a href="#packages" class="hover:text-saffron-600 transition-colors">Packages</a>
+                    <a href="#estimator" class="hover:text-saffron-600 transition-colors">Price Estimator</a>
+                    <a href="#gallery" class="hover:text-saffron-600 transition-colors">Gallery</a>
+                    <a href="#reviews" class="hover:text-saffron-600 transition-colors">Reviews</a>
+                    <a href="#contact" class="hover:text-saffron-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:+919643797788" class="text-xs font-semibold px-3 py-2 rounded-lg bg-amber-50 text-saffron-700 hover:bg-amber-100 transition-colors">
+                        <i class="fa-solid fa-phone mr-1"></i> +91 96437 97788
+                    </a>
+                    <button onclick="openBookingModal('Golden Triangle Circuit')" class="bg-gradient-to-r from-saffron-500 to-amber-600 hover:from-saffron-600 hover:to-amber-700 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-saffron-500/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Book Trip
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="menu-toggle" class="md:hidden text-slate-700 hover:text-saffron-600 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu Nav Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 px-2">
+            <div class="glass-panel rounded-2xl p-5 flex flex-col space-y-4 shadow-xl">
+                <a href="#home" class="mobile-link text-slate-800 font-medium py-1">Home</a>
+                <a href="#packages" class="mobile-link text-slate-800 font-medium py-1">Packages</a>
+                <a href="#estimator" class="mobile-link text-slate-800 font-medium py-1">Price Estimator</a>
+                <a href="#gallery" class="mobile-link text-slate-800 font-medium py-1">Gallery</a>
+                <a href="#reviews" class="mobile-link text-slate-800 font-medium py-1">Reviews</a>
+                <a href="#contact" class="mobile-link text-slate-800 font-medium py-1">Contact</a>
+                <hr class="border-slate-200">
+                <a href="tel:+919643797788" class="text-sm font-semibold text-saffron-700">
+                    <i class="fa-solid fa-phone mr-2"></i>+91 96437 97788
+                </a>
+                <button onclick="openBookingModal('Golden Triangle Circuit')" class="w-full bg-saffron-500 text-white font-semibold py-3 rounded-xl">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
+        <!-- Background Image Slider Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img id="hero-bg" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1920&q=80" alt="Taj Mahal" class="w-full h-full object-cover transition-opacity duration-1000">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center text-white px-4">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark text-saffron-500 font-semibold text-xs sm:text-sm tracking-wide uppercase mb-6 shadow-inner">
+                <i class="fa-solid fa-award text-amber-400"></i> India's Premier Luxury Tour Operator
+            </span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold font-serif tracking-tight leading-tight mb-6">
+                Explore the Unseen <br class="hidden sm:inline">
+                <span class="text-gradient">Incredible India</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Handcrafted luxury itineraries, private transfers, and bespoke local experiences across heritage, spiritual, and coastal landscapes.
+            </p>
+
+            <!-- Search / Quick Filter Bar -->
+            <div class="glass-dark p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="bg-white/10 rounded-xl px-4 py-2 text-left border border-white/10">
+                    <label class="block text-xs text-slate-300 font-medium uppercase tracking-wider">Destination</label>
+                    <select id="hero-dest" class="w-full bg-transparent text-white focus:outline-none font-semibold text-sm cursor-pointer mt-0.5">
+                        <option value="all" class="text-slate-900">All Destinations</option>
+                        <option value="north" class="text-slate-900">North India & Heritage</option>
+                        <option value="south" class="text-slate-900">South India & Backwaters</option>
+                        <option value="mountains" class="text-slate-900">Himalayas & Ladakh</option>
+                        <option value="coastal" class="text-slate-900">Goa & Beaches</option>
+                    </select>
+                </div>
+                <div class="bg-white/10 rounded-xl px-4 py-2 text-left border border-white/10">
+                    <label class="block text-xs text-slate-300 font-medium uppercase tracking-wider">Duration</label>
+                    <select id="hero-dur" class="w-full bg-transparent text-white focus:outline-none font-semibold text-sm cursor-pointer mt-0.5">
+                        <option value="all" class="text-slate-900">Any Duration</option>
+                        <option value="short" class="text-slate-900">3 - 5 Days</option>
+                        <option value="medium" class="text-slate-900">6 - 9 Days</option>
+                        <option value="long" class="text-slate-900">10+ Days</option>
+                    </select>
+                </div>
+                <button onclick="applyHeroFilter()" class="bg-saffron-500 hover:bg-saffron-600 text-slate-950 font-bold rounded-xl py-3.5 px-6 transition-all flex items-center justify-center space-x-2 shadow-lg shadow-saffron-500/30">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search Tours</span>
+                </button>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center max-w-3xl mx-auto pt-6 border-t border-white/10">
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">15,000+</h3>
+                    <p class="text-xs text-slate-300">Happy Travelers</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">4.9 / 5</h3>
+                    <p class="text-xs text-slate-300">Customer Rating</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">120+</h3>
+                    <p class="text-xs text-slate-300">Tour Routes</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">24/7</h3>
+                    <p class="text-xs text-slate-300">Concierge Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-saffron-600 text-sm font-bold tracking-widest uppercase">Handpicked Itineraries</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-serif text-slate-900 mt-2">Popular Tour Packages</h2>
+            <p class="text-slate-600 mt-3 text-base">Select from our curated collections designed for couples, families, and solo explorers.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10">
+            <button onclick="filterPackages('all')" class="pkg-filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold bg-slate-900 text-white shadow-md transition-all" data-category="all">All Packages</button>
+            <button onclick="filterPackages('heritage')" class="pkg-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all" data-category="heritage">Heritage & Forts</button>
+            <button onclick="filterPackages('spiritual')" class="pkg-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all" data-category="spiritual">Spiritual & Ghats</button>
+            <button onclick="filterPackages('nature')" class="pkg-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all" data-category="nature">Backwaters & Nature</button>
+            <button onclick="filterPackages('adventure')" class="pkg-filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all" data-category="adventure">Mountains & Adventure</button>
+        </div>
+
+        <!-- Package Cards Grid -->
+        <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Injection via JS -->
+        </div>
+    </section>
+
+    <section id="estimator" class="py-20 bg-gradient-to-b from-slate-900 to-slate-950 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Info Column -->
+                <div class="lg:col-span-5">
+                    <span class="text-saffron-500 font-bold tracking-widest text-xs uppercase">Instant Travel Calculator</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-serif mt-2 leading-tight">Custom Trip Budget Estimator</h2>
+                    <p class="text-slate-300 mt-4 leading-relaxed font-light">
+                        Plan your trip instantly. Calculate approximate pricing based on luxury tiers, duration, group size, and custom addon experiences.
+                    </p>
+                    <ul class="mt-6 space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-saffron-500"></i>
+                            <span>Transparent pricing with no hidden charges</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-saffron-500"></i>
+                            <span>Private air-conditioned transfers & dedicated guide</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-saffron-500"></i>
+                            <span>5-Star & Heritage Palace accommodation options</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Calculator Form Column -->
+                <div class="lg:col-span-7">
+                    <div class="glass-dark p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl">
+                        <form id="estimator-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Primary Region</label>
+                                    <select id="est-region" onchange="calculateEstimate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-saffron-500">
+                                        <option value="golden-triangle">Golden Triangle (Delhi-Agra-Jaipur)</option>
+                                        <option value="kerala">Kerala Backwaters & Munnar</option>
+                                        <option value="goa">Goa Coastal Experience</option>
+                                        <option value="ladakh">Ladakh High Altitude Circuit</option>
+                                        <option value="varanasi">Varanasi & Spiritual North</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Hotel Category</label>
+                                    <select id="est-hotel" onchange="calculateEstimate()" class="w-full bg-slate-800 border border-slate-700 rounded-xl py-3 px-4 text-white text-sm focus:outline-none focus:border-saffron-500">
+                                        <option value="3">3-Star Comfort Hotels</option>
+                                        <option value="4" selected>4-Star Premium Resorts</option>
+                                        <option value="5">5-Star Luxury / Heritage Palaces</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Travelers (<span id="est-travelers-val">2</span> People)</label>
+                                    <input type="range" id="est-travelers" min="1" max="10" value="2" oninput="calculateEstimate()" class="w-full accent-saffron-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Duration (<span id="est-days-val">6</span> Days)</label>
+                                    <input type="range" id="est-days" min="3" max="15" value="6" oninput="calculateEstimate()" class="w-full accent-saffron-500">
+                                </div>
+                            </div>
+
+                            <!-- Addons -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Optional Addons</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                                    <label class="flex items-center space-x-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700 cursor-pointer hover:border-saffron-500/50">
+                                        <input type="checkbox" id="add-guide" onchange="calculateEstimate()" class="accent-saffron-500 rounded">
+                                        <span class="text-xs text-slate-200">Private Tour Guide (+₹2,500/day)</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700 cursor-pointer hover:border-saffron-500/50">
+                                        <input type="checkbox" id="add-dinner" onchange="calculateEstimate()" class="accent-saffron-500 rounded">
+                                        <span class="text-xs text-slate-200">Candlelight Dinners (+₹4,000)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Total Display -->
+                            <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-xs text-slate-400 block uppercase">Estimated Total Cost</span>
+                                  
